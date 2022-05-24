@@ -1,109 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Feduk</title>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | My project (6) new</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=1280 height=720 style="width: 1280px; height: 720px; background: #1F1F20"></canvas>
+    <script src="Build/webgl.loader.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
 
-	<link rel="stylesheet" href="css/main.css">
-	<script src="js/app.js" defer></script>
-
-</head>
-<body>
-
-	<div class="container">
-		<section class="gallery">
-
-			<div class="frame">
-				<div class="frame__content">
-					<h2>Beautiful Music</h2>
-				</div>
-			</div>
-
-			<div class="frame">
-				<div class="frame__content">
-					<div class="frame-media frame-media_left" style="background-image: url(images/1.jpg)"></div>
-				</div>
-			</div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<video class="frame-media frame-media_right" src="media/video_optimized.mp4" autoplay loop muted></video>
-				</div>
-			</div>
-
-			<div class="frame"></div>
-
-			<div class="frame">
-				<div class="frame__content text-right">
-					<h3>New Song</h3>
-					<p>Слушайте на всех площадках.</p>
-				</div>
-			</div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<div class="frame-media frame-media_left" style="background-image: url(images/2.jpg)"></div>
-				</div>
-			</div>
-
-			<div class="frame"></div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<div class="frame-media frame-media_right" style="background-image: url(images/3.jpg)"></div>
-				</div>
-			</div>
-
-			<div class="frame"></div>
-
-			<div class="frame">
-				<div class="frame__content text-left">
-					<h3>Photo</h3>
-					<p>New photosession.</p>
-				</div>
-			</div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<div class="frame-media frame-media_right" style="background-image: url(images/4.jpg)"></div>
-				</div>
-			</div>
-
-			<div class="frame">
-				<div class="frame__content">
-					<video class="frame-media frame-media_left" src="media/video_optimized.mp4" autoplay loop muted></video>
-				</div>
-			</div>
-
-			<div class="frame"></div>
-			<div class="frame"></div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<div class="frame-media frame-media_right" style="background-image: url(images/5.jpg)"></div>
-				</div>
-			</div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<video class="frame-media" src="media/video_optimized.mp4" autoplay loop muted></video>
-				</div>
-			</div>
-
-			<div class="frame"></div>
-			<div class="frame"></div>
-
-			<div class="frame">
-				<div class="frame__content">FEDUK</div>
-			</div>
-
-		</section>
-	</div>
-
-	<img class="soundbutton paused" src="images/sound.gif" alt="Alt">
-	<audio class="audio" src="media/ambient.mp3" loop></audio>
-
-</body>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/webgl.data.unityweb",
+        frameworkUrl: "Build/webgl.framework.js.unityweb",
+        codeUrl: "Build/webgl.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "My project (6) new",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
 </html>
