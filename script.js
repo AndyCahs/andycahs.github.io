@@ -1,1 +1,0 @@
-bridge.send("VKWebAppAddToFavorites");
